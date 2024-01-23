@@ -1,0 +1,70 @@
+<template>
+    <lightning-card>
+        <lightning-combobox class="slds-p-horizontal--small slds-col slds-size_6-of-12 slds-m-bottom--medium"
+            name="progress" label="Tipo de Pessoa" value={value} placeholder="Selecione o Tipo de Pessoa"
+            options={options} onchange={handleChange}></lightning-combobox>
+
+        <template if:true={isFormVisible}>
+            <div slot="title">
+                <h3>
+                    <lightning-icon icon-name="standard:contact" size="small"></lightning-icon> Criar Contact
+                </h3>
+            </div>
+            <div class="slds-grid slds-wrap" style="grid: column 1px;">
+                <div class="slds-p-horizontal--small slds-col slds-size_6-of-12 slds-m-bottom--medium">
+                    <div class="slds-form-element">
+                        <lightning-input name="firstName" label="Primeiro Nome" value={firstName}
+                            onchange={contactChangeVal}></lightning-input>
+                    </div>
+                </div>
+                <div class="slds-p-horizontal--small slds-col slds-size_6-of-12 slds-m-bottom--medium">
+                    <div class="slds-form-element">
+                        <lightning-input name="lastName" label="sobrenome" value={lastName}
+                            onchange={contactChangeVal}></lightning-input>
+                    </div>
+                </div>
+                <div class="slds-p-horizontal--small slds-col slds-size_6-of-12 slds-m-bottom--medium">
+                    <div class="slds-form-element">
+                        <lightning-input name="bday" type="date" label="Data de Nascimento" value={bday}
+                            onchange={contactChangeVal}></lightning-input>
+                    </div>
+                </div>
+                <div class="slds-p-horizontal--small slds-col slds-size_6-of-12 slds-m-bottom--medium">
+                    <div class="slds-form-element">
+                        <lightning-input name="emailId" label="Email" value={emailId}
+                            onchange={contactChangeVal}></lightning-input>
+                    </div>
+                </div>
+                <div class="slds-p-horizontal--small slds-col slds-size_6-of-12 slds-m-bottom--medium">
+                    <div class="slds-form-element">
+                        <lightning-input name="departmentVal" label="Área" value={departmentVal}
+                            onchange={contactChangeVal}></lightning-input>
+                    </div>
+                </div>
+                <div class="slds-p-horizontal--small slds-col slds-size_6-of-12 slds-m-bottom--medium">
+                    <div class="slds-form-element slds-p-top_large ">
+                        <lightning-button label="Criar Contact " variant="brand"
+                            onclick={insertContactAction}></lightning-button>
+                    </div>
+                </div>
+            </div>
+            <template if:true={isPessoaFisica}>
+                <div class="slds-p-horizontal--small slds-col slds-size_6-of-12 slds-m-bottom--medium">
+                    <div class="slds-form-element">
+                        <lightning-input name="cpf" label="CPF" value={cpf}
+                            onchange={contactChangeVal}></lightning-input>
+                    </div>
+                </div>
+            </template>
+            <template if:true={isPessoaJuridica}>
+                <div class="slds-p-horizontal--small slds-col slds-size_6-of-12 slds-m-bottom--medium">
+                    <div class="slds-form-element">
+                        <lightning-input name="cnpj" label="CNPJ" value={cnpj}
+                            onchange={contactChangeVal}></lightning-input>
+                    </div>
+                </div>
+            </template>
+
+        </template>
+    </lightning-card>
+</template>

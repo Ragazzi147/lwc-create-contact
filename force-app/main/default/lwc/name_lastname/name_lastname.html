@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="HelloWorld" icon-name="custom:custom14">
+        <div class="slds-m-around_medium">
+
+            <p> Hello, {greeting}! </p>
+            <lightning-input label="Name" value={greeting} onchange={handleInputChange}></lightning-input>
+
+            <div style="margin-top: 10px">
+                <lightning-button label="Validar" onclick={handleValidation}></lightning-button>
+            </div>
+        </div>
+
+
+    </lightning-card>
+
+
+</template>

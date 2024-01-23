@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Calculadora ">
+        <div class="slds-var-m-around_medium">
+            <lightning-input type="number" label="Número 1" name="number1" onchange={numberChangeHandler}></lightning-input>
+            <lightning-input style="margin-bottom: 10px;" type="number" label="Número 2" name="number2" onchange={numberChangeHandler}></lightning-input>
+            <lightning-button variant="brand" label="Soma" title="Soma" onclick={somaHandler} ></lightning-button>
+            <lightning-button style="margin-top: 10px; margin-left: 10px" variant="brand" label="Subtração" title="Subtração" onclick={subtrairHandler} ></lightning-button>
+            <lightning-button style="margin-top: 10px; margin-left: 10px" variant="brand" label="Multiplicação" title="Multiplicação" onclick={multiplicacaoHandler} ></lightning-button>
+            <lightning-button style="margin-top: 10px; margin-left: 10px" variant="brand" label="Divisão" title="Divisão" onclick={divisaoHandler} ></lightning-button>
+            <p>{resultado}</p>
+        </div>
+    </lightning-card>
+</template>

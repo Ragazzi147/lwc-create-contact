@@ -1,0 +1,15 @@
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata" fqn="lwcTeste">
+    <apiVersion>59.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__AppPage</target>
+        <!-- Adicione outros targets se necessário -->
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__AppPage">
+            <objects>
+                <!-- Adicione objetos, se necessário -->
+            </objects>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

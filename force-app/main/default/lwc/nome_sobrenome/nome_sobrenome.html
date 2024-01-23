@@ -1,0 +1,18 @@
+<template>
+
+    <lightning-card title="Digite Nome e Sobrenome">
+
+        <div class="slds-p-around_medium">
+            <lightning-input label="Nome" value={nome} onchange={handleNomeChange}></lightning-input>
+
+            <lightning-input label="Sobrenome" value={sobrenome} onchange={handleSobrenomeChange}></lightning-input>
+
+            <div class="slds-m-top_medium">
+                Nome completo: {nomeCompleto}
+            </div>
+
+        </div>
+
+    </lightning-card>
+
+</template>
