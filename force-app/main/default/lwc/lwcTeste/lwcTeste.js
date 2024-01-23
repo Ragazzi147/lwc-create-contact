@@ -9,6 +9,7 @@ import conDepartment from '@salesforce/schema/Contact.Department';
 import conCpf from '@salesforce/schema/Contact.Cpf__c';
 import conCnpj from '@salesforce/schema/Contact.Cnpj__c';
 import conPe from '@salesforce/schema/Contact.Tipo_Pessoa__c';
+import conAccountId from '@salesforce/schema/Contact.AccountId';
 
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
@@ -25,6 +26,11 @@ export default class ContactForm extends LightningElement {
     @track isPessoaJuridica = false;
     @track cpf = '';
     @track cnpj = '';
+    @track accountId = '';
+    @track accountOptions = [];
+
+
+
 
     get options() {
         return [
@@ -57,7 +63,10 @@ export default class ContactForm extends LightningElement {
         fields[conPe.fieldApiName] = this.value;
         fields[conCpf.fieldApiName] = this.cpf;
         fields[conCnpj.fieldApiName] = this.cnpj;
+        fields[conAccountId.fieldApiName] = this.accountId; // Adicionado
         const recordInput = { apiName: conObject.objectApiName, fields };
+
+
 
         createRecord(recordInput)
             .then(contactobj => {

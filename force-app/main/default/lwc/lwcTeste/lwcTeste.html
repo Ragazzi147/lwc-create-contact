@@ -1,16 +1,17 @@
 <template>
     <lightning-card>
+        <div slot="title">
+            <h3>
+                <lightning-icon icon-name="standard:contact" size="small"></lightning-icon> Criar Contact
+            </h3>
+        </div>
         <lightning-combobox class="slds-p-horizontal--small slds-col slds-size_6-of-12 slds-m-bottom--medium"
-            name="progress" label="Tipo de Pessoa" value={value} placeholder="Selecione o Tipo de Pessoa"
+            name="progress" label="Tipo de Contrato" value={value} placeholder="Selecione o Tipo de Contrato"
             options={options} onchange={handleChange}></lightning-combobox>
 
         <template if:true={isFormVisible}>
-            <div slot="title">
-                <h3>
-                    <lightning-icon icon-name="standard:contact" size="small"></lightning-icon> Criar Contact
-                </h3>
-            </div>
-            <div class="slds-grid slds-wrap" style="grid: column 1px;">
+
+            <div class="slds-grid slds-wrap">
                 <div class="slds-p-horizontal--small slds-col slds-size_6-of-12 slds-m-bottom--medium">
                     <div class="slds-form-element">
                         <lightning-input name="firstName" label="Primeiro Nome" value={firstName}
@@ -63,7 +64,14 @@
                             onchange={contactChangeVal}></lightning-input>
                     </div>
                 </div>
+                <div class="slds-p-horizontal--small slds-col slds-size_6-of-12 slds-m-bottom--medium">
+                    <div class="slds-form-element">
+                        <lightning-combobox name="account" label="Conta" value={account} options={accountOptions}
+                            onchange={contactChangeVal}></lightning-combobox>
+                    </div>
+                </div>
             </template>
+
 
         </template>
     </lightning-card>
