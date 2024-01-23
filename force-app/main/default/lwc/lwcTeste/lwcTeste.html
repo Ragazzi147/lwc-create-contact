@@ -15,31 +15,31 @@
                 <div class="slds-p-horizontal--small slds-col slds-size_6-of-12 slds-m-bottom--medium">
                     <div class="slds-form-element">
                         <lightning-input name="firstName" label="Primeiro Nome" value={firstName}
-                            onchange={contactChangeVal}></lightning-input>
+                          placeholder="Insira o Nome"  onchange={contactChangeVal}></lightning-input>
                     </div>
                 </div>
                 <div class="slds-p-horizontal--small slds-col slds-size_6-of-12 slds-m-bottom--medium">
                     <div class="slds-form-element">
-                        <lightning-input name="lastName" label="sobrenome" value={lastName}
-                            onchange={contactChangeVal}></lightning-input>
+                        <lightning-input name="lastName" label="Sobrenome" value={lastName}
+                        placeholder="Insira o Sobrenome"  onchange={contactChangeVal}></lightning-input>
                     </div>
                 </div>
                 <div class="slds-p-horizontal--small slds-col slds-size_6-of-12 slds-m-bottom--medium">
                     <div class="slds-form-element">
                         <lightning-input name="bday" type="date" label="Data de Nascimento" value={bday}
-                            onchange={contactChangeVal}></lightning-input>
+                        placeholder="Data"  onchange={contactChangeVal}></lightning-input>
                     </div>
                 </div>
                 <div class="slds-p-horizontal--small slds-col slds-size_6-of-12 slds-m-bottom--medium">
                     <div class="slds-form-element">
                         <lightning-input name="emailId" label="Email" value={emailId}
-                            onchange={contactChangeVal}></lightning-input>
+                        placeholder="Insira o Email" onchange={contactChangeVal}></lightning-input>
                     </div>
                 </div>
                 <div class="slds-p-horizontal--small slds-col slds-size_6-of-12 slds-m-bottom--medium">
                     <div class="slds-form-element">
                         <lightning-input name="departmentVal" label="Área" value={departmentVal}
-                            onchange={contactChangeVal}></lightning-input>
+                        placeholder="Insira a Área" onchange={contactChangeVal}></lightning-input>
                     </div>
                 </div>
                 <div class="slds-p-horizontal--small slds-col slds-size_6-of-12 slds-m-bottom--medium">
@@ -53,7 +53,7 @@
                 <div class="slds-p-horizontal--small slds-col slds-size_6-of-12 slds-m-bottom--medium">
                     <div class="slds-form-element">
                         <lightning-input name="cpf" label="CPF" value={cpf}
-                            onchange={contactChangeVal}></lightning-input>
+                        placeholder="Insira o Cpf" onchange={contactChangeVal}></lightning-input>
                     </div>
                 </div>
             </template>
@@ -61,17 +61,11 @@
                 <div class="slds-p-horizontal--small slds-col slds-size_6-of-12 slds-m-bottom--medium">
                     <div class="slds-form-element">
                         <lightning-input name="cnpj" label="CNPJ" value={cnpj}
-                            onchange={contactChangeVal}></lightning-input>
+                        placeholder="Insira o Cnpj" onchange={contactChangeVal}></lightning-input>
                     </div>
                 </div>
-                <div class="slds-p-horizontal--small slds-col slds-size_6-of-12 slds-m-bottom--medium">
-                    <div class="slds-form-element">
-                        <lightning-combobox name="account" label="Conta" value={account} options={accountOptions}
-                            onchange={contactChangeVal}></lightning-combobox>
-                    </div>
-                </div>
-            </template>
 
+            </template>
 
         </template>
     </lightning-card>

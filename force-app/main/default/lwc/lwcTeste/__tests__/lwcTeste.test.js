@@ -1,4 +1,4 @@
-import { createElement } from 'lwc';
+
 import LwcTeste from 'c/lwcTeste';
 
 describe('c-lwc-teste', () => {

@@ -9,7 +9,7 @@ import conDepartment from '@salesforce/schema/Contact.Department';
 import conCpf from '@salesforce/schema/Contact.Cpf__c';
 import conCnpj from '@salesforce/schema/Contact.Cnpj__c';
 import conPe from '@salesforce/schema/Contact.Tipo_Pessoa__c';
-import conAccountId from '@salesforce/schema/Contact.AccountId';
+
 
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
 
@@ -26,8 +26,6 @@ export default class ContactForm extends LightningElement {
     @track isPessoaJuridica = false;
     @track cpf = '';
     @track cnpj = '';
-    @track accountId = '';
-    @track accountOptions = [];
 
 
 
@@ -54,6 +52,18 @@ export default class ContactForm extends LightningElement {
     }
 
     insertContactAction() {
+        // Verifique se todos os campos estão preenchidos
+        if (!this.firstName || !this.lastName || !this.bday || !this.emailId || !this.departmentVal || !this.value || (!this.cpf && !this.cnpj)) {
+            this.dispatchEvent(
+                new ShowToastEvent({
+                    title: 'Erro',
+                    message: 'Preencha os campos',
+                    variant: 'error',
+                }),
+            );
+            return;
+        }
+
         const fields = {};
         fields[conFirstName.fieldApiName] = this.firstName;
         fields[conLastName.fieldApiName] = this.lastName;
@@ -63,10 +73,7 @@ export default class ContactForm extends LightningElement {
         fields[conPe.fieldApiName] = this.value;
         fields[conCpf.fieldApiName] = this.cpf;
         fields[conCnpj.fieldApiName] = this.cnpj;
-        fields[conAccountId.fieldApiName] = this.accountId; // Adicionado
         const recordInput = { apiName: conObject.objectApiName, fields };
-
-
 
         createRecord(recordInput)
             .then(contactobj => {
@@ -88,4 +95,4 @@ export default class ContactForm extends LightningElement {
                 );
             });
     }
-}
+}    
