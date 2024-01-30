@@ -43,33 +43,38 @@
                             placeholder="Insira a Área" onchange={contactChangeVal}></lightning-input>
                     </div>
                 </div>
-                <template if:true={isPessoaFisica}>
-                    <div class="slds-p-horizontal--small slds-col slds-size_6-of-12 slds-m-bottom--medium">
-                        <div class="slds-form-element">
-                            <lightning-input name="cpf" label="CPF" value={cpf} placeholder="Insira o Cpf"
-                                onchange={contactChangeVal}></lightning-input>
-                        </div>
-                    </div>
-                </template>
-                <template if:true={isPessoaJuridica}>
-                    <div class="slds-p-horizontal--small slds-col slds-size_6-of-12 slds-m-bottom--medium">
-                        <div class="slds-form-element">
-                            <lightning-input name="cnpj" label="CNPJ" value={cnpj} placeholder="Insira o Cnpj"
-                                onchange={contactChangeVal}></lightning-input>
-                        </div>
-                    </div>
-                </template>
-                <div class="slds-p-horizontal--small slds-col slds-size_12-of-12 slds-text-align_right">
-                    <div class="slds-form-element slds-p-top_large ">
-                        <lightning-button label="Criar Contact " variant="brand"
-                            onclick={insertContactAction}></lightning-button>
+                <div>
+                    <div class="slds-p-horizontal--small slds-col slds-size_6-of-12 slds-m-bottom--medium"></div>
+                    <lightning-combobox
+                        class="slds-p-horizontal--small slds-col slds-size_12-of-12 slds-m-bottom--medium slds-text-align_center"
+                        name="accountCombobox" label="Selecione uma Conta Existente" value={selectedAccountId}
+                        placeholder="Selecione uma Conta" options={accountOptions} onchange={handleAccountChange}>
+                    </lightning-combobox>
+                </div>
+            </div>
+            <template if:true={isPessoaFisica}>
+                <div class="slds-p-horizontal--small slds-col slds-size_6-of-12 slds-m-bottom--medium">
+                    <div class="slds-form-element">
+                        <lightning-input name="cpf" label="CPF" value={cpf} placeholder="Insira o Cpf"
+                            onchange={contactChangeVal}></lightning-input>
                     </div>
                 </div>
-                <lightning-combobox
-                    class="slds-p-horizontal--small slds-col slds-size_12-of-12 slds-m-bottom--medium slds-text-align_center"
-                    name="accountCombobox" label="Selecione uma Conta Existente" value={selectedAccountId}
-                    placeholder="Selecione uma Conta" options={accountOptions} onchange={handleAccountChange}>
-                </lightning-combobox>
+            </template>
+            <template if:true={isPessoaJuridica}>
+                <div class="slds-p-horizontal--small slds-col slds-size_6-of-12 slds-m-bottom--medium">
+                    <div class="slds-form-element">
+                        <lightning-input name="cnpj" label="CNPJ" value={cnpj} placeholder="Insira o Cnpj"
+                            onchange={contactChangeVal}></lightning-input>
+                    </div>
+                </div>
+            </template>
+            <div class="slds-p-horizontal--small slds-col slds-size_12-of-12 slds-text-align_right">
+                <div class="slds-form-element slds-p-top_large ">
+                    <lightning-button label="Criar Contact " variant="brand"
+                        onclick={insertContactAction}></lightning-button>
+                </div>
+            </div>
+
             </div>
         </template>
     </lightning-card>

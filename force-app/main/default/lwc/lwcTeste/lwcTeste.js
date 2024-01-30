@@ -9,7 +9,7 @@ import conDepartment from '@salesforce/schema/Contact.Department';
 import conCpf from '@salesforce/schema/Contact.Cpf__c';
 import conCnpj from '@salesforce/schema/Contact.Cnpj__c';
 import conPe from '@salesforce/schema/Contact.Tipo_Pessoa__c';
-import ACCOUNT_FIELD from '@salesforce/schema/Contact.AccountId'; // Campo de referência à conta
+import ACCOUNT_FIELD from '@salesforce/schema/Contact.AccountId'; 
 import { getObjectInfo } from 'lightning/uiObjectInfoApi';
 import { getRecord, getFieldValue } from 'lightning/uiRecordApi';
 import { ShowToastEvent } from 'lightning/platformShowToastEvent';
